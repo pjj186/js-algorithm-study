@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer = arr;
+        let sum = arr.reduce((a, b) => a + b, 0);
+        for (let i = 0; i < arr.length - 1; i++) {
+          for (let j = i + 1; j < arr.length; j++) {
+            if (sum - (arr[i] + arr[j]) === 100) {
+              // 일곱 난쟁이들의 키의 합이 100이므로,
+              // 어떤 난쟁이 2명을 전체 키 합에서 뺐을 때 100이 된다면 어떤 난쟁이 2명을
+              // 가짜 난쟁이로 판별
+              arr.splice(j, 1);
+              arr.splice(i, 1);
+            }
+          }
+        }
+        return answer;
+      }
+
+      let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>

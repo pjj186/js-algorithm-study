@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer;
+        if (s.length % 2 === 0) {
+          let sliceIndex = s.length / 2;
+          answer = s.slice(sliceIndex - 1, -sliceIndex + 1);
+        } else {
+          let sliceIndex = Math.floor(s.length / 2);
+          answer = s.slice(sliceIndex, sliceIndex + 1);
+        }
+        return answer;
+      }
+      console.log(solution("abcdefg"));
+    </script>
+  </body>
+</html>
