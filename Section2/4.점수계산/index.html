@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      // 1 -> 맞은 문제
+      // 0 -> 틀린 문제
+      // 연속해서 맞추면 추가점수 1점
+      // 3문제 연속해서 맞추면 1 + 2 + 3 점
+      function solution(arr) {
+        let answer = 0,
+          combo = 0;
+        for (let x of arr) {
+          if (x === 1) {
+            combo++;
+            answer += combo;
+          } else combo = 0;
+        }
+        return answer;
+      }
+
+      let arr = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
+
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
